@@ -43,7 +43,7 @@ def bok(bokid):
 
 @app.route('/kontakt', methods = ['GET', 'POST'])
 def kontakt():
-    form = KontaktaOssForm()
+    form = KontaktaOssForm(request.form)
 
     if form.validate_on_submit():
         print(form.name.data)
