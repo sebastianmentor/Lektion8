@@ -41,6 +41,11 @@ def bok(bokid):
     b = Bok.query.filter(Bok.id == bokid).first()
     return render_template("bok.html", bok=b, active_page = 'bocker_page')
 
+@app.route('/addbok')
+def addbok():
+
+    return render_template("addBok.html")
+
 @app.route('/kontakt', methods = ['GET', 'POST'])
 def kontakt():
     form = KontaktaOssForm(request.form)
